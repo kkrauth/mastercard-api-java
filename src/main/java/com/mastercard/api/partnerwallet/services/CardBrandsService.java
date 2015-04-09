@@ -17,7 +17,7 @@ public class CardBrandsService extends AbstractPartnerService {
 
     public CardBrandsService(Environment environment, String consumerKey, PrivateKey privateKey) {
         super(environment, consumerKey, privateKey);
-        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/v6/card-brands?Format=XML";
+        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/card-brands?Format=XML";
         this.sandboxUrl = "https://sandbox.api.mastercard.com/masterpass/partner/v6/card-brands?Format=XML";
         this.productionUrl = "https://api.mastercard.com/masterpass/partner/v6/card-brands?Format=XML";
     }

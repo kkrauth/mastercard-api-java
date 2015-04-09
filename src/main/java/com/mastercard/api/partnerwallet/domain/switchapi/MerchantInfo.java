@@ -38,7 +38,9 @@ import javax.xml.bind.annotation.XmlType;
     "activityList",
     "extensionPoint"
 })
-public class MerchantInfo {
+public class
+
+        MerchantInfo {
 
     @XmlElement(name = "Name", required = true)
     protected String name;

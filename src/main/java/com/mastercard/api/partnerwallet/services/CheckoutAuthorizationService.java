@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.xml.bind.JAXBElement;
 
-import com.mastercard.api.common.Connector;
 import com.mastercard.api.common.Environment;
 import com.mastercard.api.common.OAuthParameters;
 import com.mastercard.api.partnerwallet.domain.all.AuthorizeCheckoutRequest;
@@ -20,17 +19,16 @@ public class CheckoutAuthorizationService extends AbstractPartnerService {
 		super(environment, consumerKey, privateKey);
 		this.sandboxUrl = "https://sandbox.api.mastercard.com/masterpass/partner/v6/checkout";
 		this.productionUrl = "https://api.mastercard.com/masterpass/partner/v6/checkout";
-		this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/card-brands?Format=XML";
+		this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/checkout";
 	}
 	
 	
 	
 	public AuthorizeCheckoutResponse getAuthorizeCheckoutResponse(AuthorizeCheckoutRequest request) {
-		OAuthParameters params = OAuthParametersFactory();
-		params.addParameter(OAUTH_SIGNATURE, request.getOAuthToken());
-		Map<String,String> responseMap = doRequest(getUrl(),POST,params,xmlToString(request));
+		System.out.println(xmlToString(request));
+		Map<String,String> responseMap = doRequest(getUrl(),POST,xmlToString(request));
         String response = responseMap.get(MESSAGE);
-        JAXBElement<AuthorizeCheckoutResponse> shippingResponse = (JAXBElement<AuthorizeCheckoutResponse>) stringToXml(response,  ShippingAddressVerificationResponse.class);
-		return shippingResponse.getValue();
+		System.out.println("Return object: " + response);
+        return (AuthorizeCheckoutResponse) stringToXml(response,  AuthorizeCheckoutResponse.class);
 	}
 }

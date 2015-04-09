@@ -1,7 +1,7 @@
 package com.mastercard.api.partnerwallet.services.walletstorage;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.partnerwallet.domain.all.ShippingAddress;
+import com.mastercard.api.partnerwallet.domain.partnerprovisioning.ShippingAddress;
 import com.mastercard.api.partnerwallet.services.common.AbstractPartnerService;
 
 import java.security.PrivateKey;
@@ -68,8 +68,7 @@ public class WalletStorageShippingAddressService extends AbstractPartnerService 
                 null
         );
         String response = responseMap.get(MESSAGE);
-        JAXBElement<ShippingAddress> connectedResponse = (JAXBElement<ShippingAddress>) stringToXml(response,  ShippingAddress.class);
-        return connectedResponse.getValue();
+        return (ShippingAddress) stringToXml(response,  ShippingAddress.class);
     }
 
     public String createShippingAddress(String walletProviderId, String walletId, ShippingAddress shippingAddress) {

@@ -112,10 +112,10 @@ public class MockObjectFactory extends ObjectFactory {
 
     public RewardProgram mockRewardProgram() {
     	RewardProgram reward = super.createRewardProgram();
-    	reward.setExpiryMonth("05");
-    	reward.setExpiryYear("2016");
-    	reward.setProgramId("areward");
-    	reward.setNumber("1234567890123456");
+    	reward.setExpiryMonth(5);
+    	reward.setExpiryYear(2016);
+    	reward.setRewardId("areward");
+    	reward.setRewardNumber("1234567890123456");
     	return reward;
 	}
     
