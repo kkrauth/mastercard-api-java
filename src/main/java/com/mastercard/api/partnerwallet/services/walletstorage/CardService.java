@@ -1,8 +1,7 @@
 package com.mastercard.api.partnerwallet.services.walletstorage;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.partnerwallet.domain.all.Card;
-import com.mastercard.api.partnerwallet.domain.all.Wallet;
+import com.mastercard.api.partnerwallet.domain.partnerprovisioning.Card;
 import com.mastercard.api.partnerwallet.services.common.AbstractPartnerService;
 
 import java.security.PrivateKey;
@@ -62,15 +61,14 @@ public class CardService extends AbstractPartnerService{
         return url;
     }
 
-    public Wallet getCard(String walletProviderId, String walletId, String cardId) {
+    public Card getCard(String walletProviderId, String walletId, String cardId) {
         Map<String,String> responseMap = doRequest(
                 getUrl(GET, walletProviderId, walletId, cardId),
                 GET,
                 null
         );
         String response = responseMap.get(MESSAGE);
-        JAXBElement<Wallet> connectedResponse = (JAXBElement<Wallet>) stringToXml(response,  Wallet.class);
-        return connectedResponse.getValue();
+        return (Card) stringToXml(response,  Card.class);
     }
 
     public String createCard(String walletProviderId, String walletId, Card card) {

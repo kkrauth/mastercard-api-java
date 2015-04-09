@@ -186,7 +186,8 @@ public abstract class Connector  {
      *
      * @return Response from the MasterCard web services
      */
-    protected Map<String, String> doRequest(String httpsURL,String requestMethod,
+    protected Map<String, String>
+    doRequest(String httpsURL,String requestMethod,
                                             OAuthParameters oparams,String body) {
 
         if (privateKey == null) {

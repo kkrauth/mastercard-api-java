@@ -25,6 +25,8 @@
         <module name="master" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="master" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-

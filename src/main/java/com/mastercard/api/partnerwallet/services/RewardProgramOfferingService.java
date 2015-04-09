@@ -15,7 +15,7 @@ public class RewardProgramOfferingService extends AbstractPartnerService {
         super(environment, consumerKey, privateKey);
         this.sandboxUrl = "https://sandbox.api.mastercard.com/masterpass/partner/v6/reward-program-offerings";
         this.productionUrl = "https://api.mastercard.com/masterpass/partner/v6/reward-program-offerings";
-        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/v6/reward-program-offerings";
+        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/reward-program-offerings";
     }
 
     public RewardProgramOfferingsResponse getRewardProgramOfferingsResponse() {

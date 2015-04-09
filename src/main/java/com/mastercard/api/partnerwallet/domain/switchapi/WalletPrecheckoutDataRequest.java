@@ -72,9 +72,9 @@ public class WalletPrecheckoutDataRequest {
     @XmlElement(name = "OauthToken", required = true)
     protected String oauthToken;
     @XmlElement(name = "ConsumerWalletId")
-    protected long consumerWalletId;
+    protected String consumerWalletId;
     @XmlElement(name = "PrecheckoutTransactionId")
-    protected long precheckoutTransactionId;
+    protected String precheckoutTransactionId;
     @XmlElement(name = "PairingDataTypes", required = true)
     protected WalletPrecheckoutDataRequest.PairingDataTypes pairingDataTypes;
     @XmlElement(name = "WalletId", required = true)
@@ -108,7 +108,7 @@ public class WalletPrecheckoutDataRequest {
      * Gets the value of the consumerWalletId property.
      * 
      */
-    public long getConsumerWalletId() {
+    public String getConsumerWalletId() {
         return consumerWalletId;
     }
 
@@ -116,7 +116,7 @@ public class WalletPrecheckoutDataRequest {
      * Sets the value of the consumerWalletId property.
      * 
      */
-    public void setConsumerWalletId(long value) {
+    public void setConsumerWalletId(String value) {
         this.consumerWalletId = value;
     }
 
@@ -124,7 +124,7 @@ public class WalletPrecheckoutDataRequest {
      * Gets the value of the precheckoutTransactionId property.
      * 
      */
-    public long getPrecheckoutTransactionId() {
+    public String getPrecheckoutTransactionId() {
         return precheckoutTransactionId;
     }
 
@@ -132,7 +132,7 @@ public class WalletPrecheckoutDataRequest {
      * Sets the value of the precheckoutTransactionId property.
      * 
      */
-    public void setPrecheckoutTransactionId(long value) {
+    public void setPrecheckoutTransactionId(String value) {
         this.precheckoutTransactionId = value;
     }
 

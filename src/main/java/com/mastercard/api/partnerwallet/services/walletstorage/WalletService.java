@@ -1,8 +1,7 @@
 package com.mastercard.api.partnerwallet.services.walletstorage;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.partnerwallet.domain.all.Card;
-import com.mastercard.api.partnerwallet.domain.all.Wallet;
+import com.mastercard.api.partnerwallet.domain.partnerprovisioning.Wallet;
 import com.mastercard.api.partnerwallet.services.common.AbstractPartnerService;
 
 import java.security.PrivateKey;
@@ -20,7 +19,7 @@ public class WalletService extends AbstractPartnerService {
         this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>?Format=XML";
     }
 
-    protected String getUrl(String method, Long walletProviderId, Long walletId) {
+    protected String getUrl(String method, String walletProviderId, String walletId) {
         String url = "";
         switch(environment) {
             case PRODUCTION:
@@ -38,11 +37,13 @@ public class WalletService extends AbstractPartnerService {
         url = url.replace("<wallet_provider_id>", String.valueOf(walletProviderId));
         if ((!method.equals(POST)) && walletId != null) {
             url = url.replace("<wallet_id>", String.valueOf(walletId));
+        } else {
+            url = url.replace("/<wallet_id>", "");
         }
         return url;
     }
 
-    public Wallet readWallet(Long walletProviderId, Long walletId) {
+    public Wallet readWallet(String walletProviderId, String walletId) {
         Map<String,String> responseMap = doRequest(
                 getUrl(GET, walletProviderId, walletId),
                 GET,
@@ -53,16 +54,16 @@ public class WalletService extends AbstractPartnerService {
         return connectedResponse.getValue();
     }
 
-    public String createWallet(Long walletProviderId, Card card) {
+    public String createWallet(String walletProviderId) {
         Map<String,String> responseMap = doRequest(
                 getUrl(POST, walletProviderId, null),
                 POST,
-                xmlToString(card)
+                " "
         );
         return responseMap.get(MESSAGE);
     }
 
-    public void deleteWallet(Long walletProviderId, Long walletId) {
+    public void deleteWallet(String walletProviderId, String walletId) {
         Map<String,String> responseMap = doRequest(
                 getUrl(DELETE, walletProviderId, walletId),
                 DELETE,

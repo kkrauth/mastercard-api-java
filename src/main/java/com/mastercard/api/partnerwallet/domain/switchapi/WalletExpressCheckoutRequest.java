@@ -70,19 +70,19 @@ public class WalletExpressCheckoutRequest {
     @XmlElement(name = "OrderAmount")
     protected double orderAmount;
     @XmlElement(name = "PrecheckoutTransactionId")
-    protected long precheckoutTransactionId;
+    protected String precheckoutTransactionId;
     @XmlElement(name = "ConsumerWalletId")
-    protected long consumerWalletId;
+    protected String consumerWalletId;
     @XmlElement(name = "MerchantParameterId", required = true)
     protected String merchantParameterId;
     @XmlElement(name = "CardId")
-    protected long cardId;
+    protected String cardId;
     @XmlElement(name = "ShippingAddressId")
-    protected long shippingAddressId;
+    protected String shippingAddressId;
     @XmlElement(name = "RewardProgramId")
-    protected long rewardProgramId;
+    protected String rewardProgramId;
     @XmlElement(name = "WalletId")
-    protected long walletId;
+    protected String walletId;
 
     /**
      * Gets the value of the merchantCheckoutId property.
@@ -176,7 +176,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the precheckoutTransactionId property.
      * 
      */
-    public long getPrecheckoutTransactionId() {
+    public String getPrecheckoutTransactionId() {
         return precheckoutTransactionId;
     }
 
@@ -184,7 +184,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the precheckoutTransactionId property.
      * 
      */
-    public void setPrecheckoutTransactionId(long value) {
+    public void setPrecheckoutTransactionId(String value) {
         this.precheckoutTransactionId = value;
     }
 
@@ -192,7 +192,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the consumerWalletId property.
      * 
      */
-    public long getConsumerWalletId() {
+    public String getConsumerWalletId() {
         return consumerWalletId;
     }
 
@@ -200,7 +200,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the consumerWalletId property.
      * 
      */
-    public void setConsumerWalletId(long value) {
+    public void setConsumerWalletId(String value) {
         this.consumerWalletId = value;
     }
 
@@ -232,7 +232,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the cardId property.
      * 
      */
-    public long getCardId() {
+    public String getCardId() {
         return cardId;
     }
 
@@ -240,7 +240,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the cardId property.
      * 
      */
-    public void setCardId(long value) {
+    public void setCardId(String value) {
         this.cardId = value;
     }
 
@@ -248,7 +248,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the shippingAddressId property.
      * 
      */
-    public long getShippingAddressId() {
+    public String getShippingAddressId() {
         return shippingAddressId;
     }
 
@@ -256,7 +256,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the shippingAddressId property.
      * 
      */
-    public void setShippingAddressId(long value) {
+    public void setShippingAddressId(String value) {
         this.shippingAddressId = value;
     }
 
@@ -264,7 +264,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the rewardProgramId property.
      * 
      */
-    public long getRewardProgramId() {
+    public String getRewardProgramId() {
         return rewardProgramId;
     }
 
@@ -272,7 +272,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the rewardProgramId property.
      * 
      */
-    public void setRewardProgramId(long value) {
+    public void setRewardProgramId(String value) {
         this.rewardProgramId = value;
     }
 
@@ -280,7 +280,7 @@ public class WalletExpressCheckoutRequest {
      * Gets the value of the walletId property.
      * 
      */
-    public long getWalletId() {
+    public String getWalletId() {
         return walletId;
     }
 
@@ -288,7 +288,7 @@ public class WalletExpressCheckoutRequest {
      * Sets the value of the walletId property.
      * 
      */
-    public void setWalletId(long value) {
+    public void setWalletId(String value) {
         this.walletId = value;
     }
 

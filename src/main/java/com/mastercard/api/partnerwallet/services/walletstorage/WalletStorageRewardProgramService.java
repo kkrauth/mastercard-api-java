@@ -4,7 +4,7 @@ import java.security.PrivateKey;
 import java.util.Map;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.partnerwallet.domain.all.RewardProgram;
+import com.mastercard.api.partnerwallet.domain.partnerprovisioning.RewardProgram;
 import com.mastercard.api.partnerwallet.services.common.AbstractPartnerService;
 
 import javax.xml.bind.JAXBElement;
@@ -23,8 +23,8 @@ public class WalletStorageRewardProgramService extends AbstractPartnerService {
         this.sandboxUpdateUrl = "https://sandbox.api.mastercard.com/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program/<reward_program_id>";
         this.productionUrl = "https://api.mastercard.com/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program";
         this.productionUpdateUrl = "https://api.mastercard.com/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program/<reward_program_id>";
-        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program";
-        this.mtfUpdateUrl = "https://api.mastercard.com/mtf/masterpass/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program/<reward_program_id>";
+        this.mtfUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program";
+        this.mtfUpdateUrl = "https://api.mastercard.com/mtf/masterpass/partner/v6/wallet-provider/<wallet_provider_id>/wallet/<wallet_id>/reward-program/<reward_program_id>";
     }
 
     protected String getUrl(String method, String walletProviderId, String walletId, String rewardProgramId){
@@ -69,8 +69,8 @@ public class WalletStorageRewardProgramService extends AbstractPartnerService {
                 null
         );
         String response = responseMap.get(MESSAGE);
-        JAXBElement<RewardProgram> connectedResponse = (JAXBElement<RewardProgram>) stringToXml(response,  RewardProgram.class);
-        return connectedResponse.getValue();
+        return (RewardProgram) stringToXml(response,  RewardProgram.class);
+        //return program.getValue();
     }
 
     public String createRewardProgam(String walletProviderId, String walletId, RewardProgram rewardProgram) {
