@@ -1,0 +1,12 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="Account">
+    <complexType>
+      <sequence>
+        <element type="string" name="Status"/>
+        <element type="string" name="Listed"/>
+        <element type="string" name="ReasonCode"/>
+        <element type="string" name="Reason"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

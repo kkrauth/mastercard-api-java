@@ -113,7 +113,7 @@ public class Countries {
     @XmlType(name = "", propOrder = {
         "name",
         "code",
-        "geoCoded"
+        "geoCoding"
     })
     public static class Country {
 
@@ -121,8 +121,8 @@ public class Countries {
         protected String name;
         @XmlElement(name = "Code", required = true)
         protected String code;
-        @XmlElement(name = "Geocoded", required = true)
-        protected String geoCoded;
+        @XmlElement(name = "GeoCoding", required = true)
+        protected String geoCoding;
 
         /**
          * Gets the value of the name property.
@@ -180,8 +180,8 @@ public class Countries {
          *     {@link String }
          *     
          */
-        public String getGeoCoded() {
-            return geoCoded;
+        public String getGeoCoding() {
+            return geoCoding;
         }
 
         /**
@@ -192,8 +192,8 @@ public class Countries {
          *     {@link String }
          *     
          */
-        public void setGeoCoded(String value) {
-            this.geoCoded = value;
+        public void setGeoCoding(String value) {
+            this.geoCoding = value;
         }
 
     }

@@ -1,7 +1,7 @@
 package com.mastercard.api.location.v1.atms.services;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.location.v1.atms.domain.Atms;
+import com.mastercard.api.location.atms.v1.Atms;
 import com.mastercard.api.location.v1.atms.domain.options.AtmLocationRequestOptions;
 import junit.framework.TestCase;
 import utils.TestUtils;

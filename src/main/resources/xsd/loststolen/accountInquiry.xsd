@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="AccountInquiry">
+    <complexType>
+      <sequence>
+        <element name="AccountNumber" type="long"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

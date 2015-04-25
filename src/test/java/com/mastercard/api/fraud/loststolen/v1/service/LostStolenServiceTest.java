@@ -1,7 +1,7 @@
 package com.mastercard.api.fraud.loststolen.v1.service;
 
 import com.mastercard.api.common.Environment;
-import com.mastercard.api.fraud.loststolen.v1.domain.Account;
+import com.mastercard.api.fraud.loststolen.v1.Account;
 import junit.framework.TestCase;
 import utils.TestUtils;
 

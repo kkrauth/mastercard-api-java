@@ -1,0 +1,76 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="Atms">
+    <complexType>
+      <sequence>
+        <element type="byte" name="PageOffset" />
+        <element type="short" name="TotalCount" />
+        <element name="Atm" maxOccurs="unbounded" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element name="Location">
+                <complexType>
+                  <sequence>
+                    <element type="string" name="Name" />
+                    <element type="float" name="Distance" />
+                    <element type="string" name="DistanceUnit" />
+                    <element name="Address">
+                      <complexType>
+                        <sequence>
+                          <element type="string" name="Line1" />
+                          <element type="string" name="Line2" />
+                          <element type="string" name="City" />
+                          <element type="float" name="PostalCode" />
+                          <element name="CountrySubdivision">
+                            <complexType>
+                              <sequence>
+                                <element type="string" name="Name" />
+                                <element type="string" name="Code" />
+                              </sequence>
+                            </complexType>
+                          </element>
+                          <element name="Country">
+                            <complexType>
+                              <sequence>
+                                <element type="string" name="Name" />
+                                <element type="string" name="Code" />
+                              </sequence>
+                            </complexType>
+                          </element>
+                        </sequence>
+                      </complexType>
+                    </element>
+                    <element name="Point">
+                      <complexType>
+                        <sequence>
+                          <element type="float" name="Latitude" />
+                          <element type="float" name="Longitude" />
+                        </sequence>
+                      </complexType>
+                    </element>
+                    <element name="LocationType">
+                      <complexType>
+                        <sequence>
+                          <element type="string" name="Type" />
+                        </sequence>
+                      </complexType>
+                    </element>
+                  </sequence>
+                </complexType>
+              </element>
+              <element type="string" name="HandicapAccessible" />
+              <element type="string" name="Camera" />
+              <element type="string" name="Availability" />
+              <element type="string" name="AccessFees" />
+              <element type="string" name="Owner" />
+              <element type="string" name="SharedDeposit" />
+              <element type="string" name="SurchargeFreeAlliance" />
+              <element type="string" name="SurchargeFreeAllianceNetwork" />
+              <element type="string" name="Sponsor" />
+              <element type="string" name="SupportEMV" />
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

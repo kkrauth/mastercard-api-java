@@ -12,7 +12,59 @@
   
 
   <build>
-    <plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.9.1</version>
+          <executions>
+            <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>add-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>${project.build.directory}/generated-sources/jaxb/</source>
+                </sources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+  <plugins>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>jaxb2-maven-plugin</artifactId>
+      <version>1.6</version>
+      <configuration>
+        <target>2.1</target>
+      </configuration>
+      <executions>
+        <execution>
+          <id>xjc-atm</id>
+          <goals><goal>xjc</goal></goals>
+          <configuration>
+            <packageName>com.mastercard.api.location.atms.v1</packageName>
+            <schemaDirectory>src/main/resources/xsd/atm</schemaDirectory>
+          </configuration>
+        </execution>
+        <execution>
+          <id>xjc-loststolen</id>
+          <goals><goal>xjc</goal></goals>
+          <configuration>
+            <packageName>com.mastercard.api.fraud.loststolen.v1</packageName>
+            <schemaDirectory>src/main/resources/xsd/loststolen</schemaDirectory>
+            <clearOutputDir>false</clearOutputDir>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
@@ -43,6 +95,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
